@@ -1,0 +1,10 @@
+language: generic
+sudo: required
+services:
+  - docker
+
+before_install:
+  - docker build -t alexkovalenko/simpleweb -f ./simple_CICD/frontent/Dockerfile.dev ./simple_CICD/frontent/
+ 
+script:
+  - docker run alexkovalenko/simpleweb npm run test -- --coverage
