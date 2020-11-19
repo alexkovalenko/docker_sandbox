@@ -8,4 +8,4 @@ before_install:
   - docker build -t alexkovalenko/simpleweb -f Dockerfile.dev .
  
 script:
-  - docker run alexkovalenko/simpleweb npm run test -- --coverage
+  - docker run -e CI=true alexkovalenko/simpleweb npm run test
